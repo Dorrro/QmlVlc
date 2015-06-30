@@ -267,7 +267,7 @@ void QmlVlcPlayerProxy::play( const QString& mrl )
 
     p.clear_items();
 
-    int item = p.add_media( mrl.toUtf8().data(), 0, 0, 0, 0 );
+    int item = p.add_media( mrl.toUtf8().data(), !mrl.startsWith("http://") );
     if( item >= 0) {
         p.play( item );
     }
